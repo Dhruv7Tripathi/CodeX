@@ -47,9 +47,13 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({
         <div className="flex items-center px-6">
           <button
             onClick={toggleMobileSidebar}
-            className="text-white"
-          >
-            {isMobileSidebarOpen ? <X /> : <Menu />}
+            className="text-white">
+
+
+            {/* //   {isMobileSidebarOpen ? <X /> : <Menu />} */}
+
+
+
           </button>
           <Link href="/" className="flex items-center gap-3">
             <Image
