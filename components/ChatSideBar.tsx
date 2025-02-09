@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Menu, X } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
@@ -48,12 +48,6 @@ export const ChatSidebar: React.FC<ChatSidebarProps> = ({
           <button
             onClick={toggleMobileSidebar}
             className="text-white">
-
-
-            {/* //   {isMobileSidebarOpen ? <X /> : <Menu />} */}
-
-
-
           </button>
           <Link href="/" className="flex items-center gap-3">
             <Image
