@@ -1,90 +1,56 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Github, Twitter, Linkedin } from 'lucide-react';
 import { useSession } from "next-auth/react";
 import UserAccountNav from "./userAccountNav";
 import SignInButton from "./SignInButton";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
-interface ProjectOption {
-  title: string;
-  href: string;
-  gradient: string;
-}
+import { projectOptions } from '@/contant';
+// interface ProjectOption {
+//   title: string;
+//   href: string;
+//   gradient: string;
+// }
 
 const LandingPage = () => {
   const [textareaFocused, setTextareaFocused] = useState(false);
   const [promptText, setPromptText] = useState("");
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
+  useEffect(() => {
+    setPromptText("");
+  }, []);
 
   const handleGenerateCode = () => {
-    if (!session?.user) {
-      return;
-    }
+    if (!session?.user) return;
     if (promptText.trim()) {
       router.push(`/dashboard?prompt=${encodeURIComponent(promptText)}`);
     }
   };
 
   const handleOptionClick = (href: string) => {
-    if (!session?.user) {
-      return;
-    }
+    if (!session?.user) return;
     router.push(href);
   };
-
-  const projectOptions: ProjectOption[] = [
-    {
-      title: "what is git?",
-      href: "/dashboard",
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "what is javaScript?",
-      href: "/dashboard",
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "give a code of fibonacci no. in java",
-      href: "/dashboard",
-      gradient: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Scaffold UI with shadcn",
-      href: "/dashboard",
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Draft a presentation with Slidev",
-      href: "/dashboard",
-      gradient: "from-yellow-500 to-orange-500"
-    },
-    {
-      title: "what is gitHub?",
-      href: "/dashboard",
-      gradient: "from-indigo-500 to-purple-500"
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <header className="fixed w-full top-0 bg-gray-900/95 backdrop-blur-lg border-b border-gray-800 z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-            Fixly.ai
+            CodeX.ai
           </div>
           <div className="flex gap-4 items-center">
             <div className="text-gray-400 hover:text-white transition-all hover:scale-105">
-              {session?.user ? (
+              {status === "loading" ? null : session?.user ? (
                 <UserAccountNav user={session.user} />
               ) : (
                 <SignInButton text={"Sign In"} />
               )}
             </div>
             {session?.user && (
-              <Link href='/dashboard'>
+              <Link href="/dashboard">
                 <button className="bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 rounded-md transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
                   Get Started
                 </button>
@@ -100,20 +66,18 @@ const LandingPage = () => {
               What do you want to build?
             </h1>
             <p className="text-gray-400 text-xl">
-              Let fixly.ai help you correct your code effortlessly.
+              Let CodeX.ai help you correct your code effortlessly.
             </p>
           </div>
           <div
-            className={`relative bg-gray-800/50 rounded-xl p-4 mb-12 backdrop-blur-sm border transition-all duration-300 ${textareaFocused
-              ? 'border-blue-500/50 shadow-lg shadow-blue-500/25'
-              : 'border-gray-700'
+            className={`relative bg-gray-800/50 rounded-xl p-4 mb-12 backdrop-blur-sm border transition-all duration-300 ${textareaFocused ? 'border-blue-500/50 shadow-lg shadow-blue-500/25' : 'border-gray-700'
               }`}
           >
             <div className="flex flex-col gap-3">
               <textarea
                 value={promptText}
                 onChange={(e) => setPromptText(e.target.value)}
-                placeholder="How can fixly.ai help you today? Describe your code..."
+                placeholder="How can CodeX.ai help you today? Describe your code..."
                 className="w-full bg-transparent outline-none resize-none min-h-[120px] text-gray-300 placeholder-gray-500"
                 onFocus={() => setTextareaFocused(true)}
                 onBlur={() => setTextareaFocused(false)}
@@ -159,7 +123,7 @@ const LandingPage = () => {
       <footer className="border-t border-gray-800 py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="text-sm text-gray-500 text-center">
-            © 2025 Fixly.ai
+            © 2025 CodeX.ai
           </div>
           <div className="flex gap-4">
             <Github className="w-5 h-5 text-gray-500 hover:text-white transition-colors cursor-pointer" />

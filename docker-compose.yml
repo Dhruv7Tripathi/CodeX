@@ -12,5 +12,15 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+  codex:
+    image: codex
+    container_name: codex
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432/fixlyai
 volumes:
   pgdata:
