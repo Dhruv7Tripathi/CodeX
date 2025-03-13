@@ -8,17 +8,13 @@ import SignInButton from "./SignInButton";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { projectOptions } from '@/contant';
-// interface ProjectOption {
-//   title: string;
-//   href: string;
-//   gradient: string;
-// }
 
 const LandingPage = () => {
   const [textareaFocused, setTextareaFocused] = useState(false);
   const [promptText, setPromptText] = useState("");
   const { data: session, status } = useSession();
   const router = useRouter();
+
   useEffect(() => {
     setPromptText("");
   }, []);
@@ -34,6 +30,7 @@ const LandingPage = () => {
     if (!session?.user) return;
     router.push(href);
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       <header className="fixed w-full top-0 bg-gray-900/95 backdrop-blur-lg border-b border-gray-800 z-50">

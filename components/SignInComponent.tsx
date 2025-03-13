@@ -37,7 +37,7 @@ export default function SignInPage() {
 
               <Image src="/FIXLY.AI.png" width={500} height={500} alt="logo" className='h-12 w-12' />
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-foreground">See what&apos;s happening</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Join SnipAI today.</p>
+              <p className="mt-2 text-sm text-muted-foreground">Join codeX today.</p>
             </div>
             <div className="space-y-4">
               <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md px-8 w-full"

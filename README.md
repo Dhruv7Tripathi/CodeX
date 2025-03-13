@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CodeX - AI-Powered Coding Companion
 
-## Getting Started
+CodeX is an AI-powered application designed to assist developers in their coding journey. Whether you're a beginner or an experienced programmer, CodeX provides real-time coding suggestions, debugging assistance, and explanations to enhance your workflow and efficiency.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Code Assistance** - Get real-time code suggestions, refactoring tips, and explanations.
+- **Debugging Support** - Identify and fix errors quickly with AI-driven debugging.
+- **Code Review & Optimization** - Improve code quality with AI-suggested best practices.
+- **Multi-Language Support** - Works with multiple programming languages including JavaScript, Python, Java, C++, and more.
+- **Interactive Chatbot** - Ask coding-related questions and get instant AI-generated responses.
+- **Seamless Integration** - Integrate CodeX with your favorite IDEs and development environments.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ensure you have the following installed on your system:
 
-## Learn More
+- Node.js (v16 or later)
+- npm or yarn
+- Git
 
-To learn more about Next.js, take a look at the following resources:
+### Steps
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dhruv7tripathi/codex.git
+   cd codex
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+3. Run the application:
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   yarn dev
+   ```
+4. Open your browser and navigate to `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+- Enter a code snippet and receive AI-generated suggestions.
+- Use the interactive chatbot for debugging and explanations.
+- Optimize your code using AI-powered recommendations.
+- Customize settings for personalized coding assistance.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Backend:** Node.js, Express.js, Prisma
+- **Database:** PostgreSQL
+- **AI Integration:** OpenAI/Gemini API
+
+## Contribution
+
+We welcome contributions! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`feature-branch`)
+3. Commit your changes (`git commit -m "Added new feature"`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For queries or collaborations, feel free to reach out:
+
+- **GitHub:** [yourusername](https://github.com/dhruv7tripathi)
+
+---
+
+_Enhance your coding journey with CodeX!_ 🚀

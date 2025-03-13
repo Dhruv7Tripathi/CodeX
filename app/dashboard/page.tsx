@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { ChatSidebar } from '@/components/ChatSideBar';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import VoiceInterface from './components/VoiceInterface';
 interface Chat {
   id: string;
   title: string;
